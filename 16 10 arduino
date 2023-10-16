@@ -1,0 +1,153 @@
+// 6) semáforo de 3 luzes
+int vermelho = 7;
+int laranja = 4;
+int verde = 2;
+
+void setup()
+{
+  pinMode(vermelho, OUTPUT);
+  pinMode(laranja, OUTPUT);
+  pinMode(verde, OUTPUT);
+}
+void loop()
+{
+  digitalWrite(7, HIGH);
+  delay(10000);
+  digitalWrite(7, LOW);
+  digitalWrite(4, HIGH);
+  delay(10000);
+  digitalWrite(4, LOW);
+  digitalWrite(2, HIGH);
+  delay(10000);
+  digitalWrite(2, LOW);
+  digitalWrite(4, HIGH);
+  delay(10000);
+  digitalWrite(4, LOW);
+}
+
+// 7) aumentando o brilho do LED
+int led = 6;
+int i = 0;
+
+void setup()
+{
+  pinMode(6, OUTPUT);
+ 
+}
+void loop()
+{
+for (i = 0; i <= 255; i += 5); {
+  analogWrite(7, i);
+  delay(50); 
+}
+}
+
+// 8) manipulando led rgb
+int vermelho = 11;
+int azul = 10;
+int verde = 9;
+
+void setup()
+{
+  pinMode(vermelho, OUTPUT);
+  pinMode(azul, OUTPUT);
+  pinMode(verde, OUTPUT);
+}
+
+void loop()
+{
+  Vermelho();
+  Verde();
+  Azul();
+  Branco();
+  Magenta();
+  Amarelo();
+  Ciano();
+}
+void Vermelho() {
+  digitalWrite(vermelho, HIGH);
+  delay(1000);
+  digitalWrite(vermelho, LOW);
+  delay(1000);
+}
+void Verde() {
+  digitalWrite(verde, HIGH);
+  delay(1000);
+  digitalWrite(verde, LOW);
+  delay(1000);
+}
+void Azul() {
+  digitalWrite(azul, HIGH);
+  delay(1000);
+  digitalWrite(azul, LOW);
+  delay(1000);
+}
+void Branco() {
+  digitalWrite(azul, HIGH);
+  digitalWrite(vermelho, HIGH);
+  digitalWrite(verde, HIGH);
+  delay(1000);
+  digitalWrite(azul, LOW);
+  digitalWrite(vermelho, LOW);
+  digitalWrite(verde, LOW);
+  delay(1000);
+}
+void Magenta() {
+  digitalWrite(azul, HIGH);
+  digitalWrite(vermelho, HIGH);
+  delay(1000);
+  digitalWrite(azul, LOW);
+  digitalWrite(vermelho, LOW);
+  delay(1000);
+}
+void Amarelo() {
+  digitalWrite(verde, HIGH);
+  digitalWrite(vermelho, HIGH);
+  delay(1000);
+  digitalWrite(verde, LOW);
+  digitalWrite(vermelho, LOW);
+  delay(1000);
+}
+void Ciano() {
+  digitalWrite(verde, HIGH);
+  digitalWrite(azul, HIGH);
+  delay(1000);
+  digitalWrite(verde, LOW);
+  digitalWrite(azul, LOW);
+  delay(1000);
+}
+
+// 9) manipulando a luminosidade
+int l = 0;
+
+void setup ()
+{
+  pinMode(A0, INPUT);
+}
+
+void loop ()
+{
+  l = analogRead(A0);
+  Serial.println(l);
+  delay(10);
+}
+
+// 10) led sensivel a luz
+int l = 0;
+
+void setup()
+{
+  pinMode(A0, INPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop ()
+{
+  l = analogRead(A0);
+  if (l < 750) {
+  digitalWrite(LED_BUILTIN, HIGH);
+  } else {
+  digitalWrite(LED_BUILTIN, LOW);
+  }
+  delay(10);
+}
